@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.streamlit/secrets.toml
+.env
+.env.*
+!.env.example
+data/raw/
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+artifacts/
+docs/pdf_new/
+*.sqlite3-shm
+*.sqlite3-wal
