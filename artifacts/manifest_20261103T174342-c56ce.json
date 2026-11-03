@@ -1,0 +1,121 @@
+{
+  "version": "20261103T174342-c56ce",
+  "selected": "Ridge",
+  "models": {
+    "SeasonalNaive": {
+      "validation": {
+        "mae": 372.05913978494624,
+        "rmse": 543.8227049403162,
+        "wape": 0.117733543792768,
+        "total_abs_error": 346015.0,
+        "n": 930
+      },
+      "params": {
+        "lag": 7
+      },
+      "test": {
+        "mae": 357.46451612903223,
+        "rmse": 531.6677109235708,
+        "wape": 0.11614574799207486,
+        "total_abs_error": 332442.0,
+        "n": 930
+      }
+    },
+    "Ridge": {
+      "validation": {
+        "mae": 265.95886288002174,
+        "rmse": 400.05187301677654,
+        "wape": 0.0841594146781574,
+        "total_abs_error": 247341.7424784202,
+        "n": 930
+      },
+      "params": {
+        "alpha": 25.0
+      },
+      "cv_wape": 0.08557057074968988,
+      "test": {
+        "mae": 303.08937846297516,
+        "rmse": 418.40333710793834,
+        "wape": 0.09847842507905993,
+        "total_abs_error": 281873.1219705669,
+        "n": 930
+      }
+    },
+    "HistGradientBoosting": {
+      "validation": {
+        "mae": 294.02440396413215,
+        "rmse": 446.81709720904877,
+        "wape": 0.0930404103505221,
+        "total_abs_error": 273442.6956866429,
+        "n": 930
+      },
+      "params": {
+        "max_iter": 75,
+        "max_leaf_nodes": 15,
+        "learning_rate": 0.07,
+        "l2_regularization": 1.0
+      },
+      "cv_wape": 0.07796083328379967,
+      "test": {
+        "mae": 351.69544827985675,
+        "rmse": 492.67332280166397,
+        "wape": 0.11427128865324175,
+        "total_abs_error": 327076.76690026675,
+        "n": 930
+      }
+    }
+  },
+  "data_signature": "449ab133804806fa874b2f49dd4eaa18cf73b5498927a70403875cdcf65cb30b",
+  "seed": 42,
+  "train_dates": [
+    "2024-01-29",
+    "2024-04-29"
+  ],
+  "val_dates": [
+    "2024-04-30",
+    "2024-05-30"
+  ],
+  "test_dates": [
+    "2024-05-31",
+    "2024-06-30"
+  ],
+  "features": [
+    "zone_id",
+    "borough",
+    "dow",
+    "month",
+    "day_of_month",
+    "is_weekend",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_mean_7",
+    "rolling_mean_28",
+    "rolling_std_7",
+    "rolling_min_7",
+    "temperature_lag1",
+    "precipitation_lag1",
+    "wind_lag1"
+  ],
+  "importance": {
+    "methods": [
+      "permutation",
+      "ablation"
+    ],
+    "features_tested": 21,
+    "ablation_features": 7,
+    "time_comparison": "early vs late validation"
+  },
+  "promotion": {
+    "decision": "staged",
+    "rule": "Новая версия включается, если WAPE ниже действующей на ≥2% на одном контрольном отрезке",
+    "current_wape": 0.09847842507905993,
+    "candidate_wape": 0.09847842507905993,
+    "comparable_zones": 30
+  }
+}

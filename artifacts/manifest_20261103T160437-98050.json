@@ -1,0 +1,114 @@
+{
+  "version": "20261103T160437-98050",
+  "selected": "HistGradientBoosting",
+  "models": {
+    "SeasonalNaive": {
+      "validation": {
+        "mae": 182.9781746031746,
+        "rmse": 240.53522908000696,
+        "wape": 0.08275038404663115,
+        "total_abs_error": 92221.0,
+        "n": 504
+      },
+      "params": {
+        "lag": 7
+      },
+      "test": {
+        "mae": 186.7829457364341,
+        "rmse": 239.76226920938603,
+        "wape": 0.08844051783308803,
+        "total_abs_error": 96380.0,
+        "n": 516
+      }
+    },
+    "Ridge": {
+      "validation": {
+        "mae": 166.87008196877528,
+        "rmse": 205.23477264025465,
+        "wape": 0.07546563079862205,
+        "total_abs_error": 84102.52131226275,
+        "n": 504
+      },
+      "params": {
+        "alpha": 25.0
+      },
+      "cv_wape": 0.06909099013974268,
+      "test": {
+        "mae": 204.88716566373688,
+        "rmse": 246.8474018358644,
+        "wape": 0.09701274898096872,
+        "total_abs_error": 105721.77748248824,
+        "n": 516
+      }
+    },
+    "HistGradientBoosting": {
+      "validation": {
+        "mae": 150.099116097557,
+        "rmse": 191.97246939011535,
+        "wape": 0.06788109854669641,
+        "total_abs_error": 75649.95451316872,
+        "n": 504
+      },
+      "params": {
+        "max_iter": 125,
+        "max_leaf_nodes": 23,
+        "learning_rate": 0.05,
+        "l2_regularization": 3.0
+      },
+      "cv_wape": 0.06833078221658942,
+      "test": {
+        "mae": 132.71816637471852,
+        "rmse": 167.21539746980667,
+        "wape": 0.0628411941666282,
+        "total_abs_error": 68482.57384935475,
+        "n": 516
+      }
+    }
+  },
+  "data_signature": "d41360fb3ef028a70d75c641a419206abc7b8dae14c92abded98d94e6c90a79c",
+  "seed": 42,
+  "train_dates": [
+    "2026-04-05",
+    "2026-08-09"
+  ],
+  "val_dates": [
+    "2026-08-10",
+    "2026-09-20"
+  ],
+  "test_dates": [
+    "2026-09-21",
+    "2026-11-02"
+  ],
+  "features": [
+    "zone_id",
+    "borough",
+    "dow",
+    "month",
+    "day_of_month",
+    "is_weekend",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_mean_7",
+    "rolling_mean_28",
+    "rolling_std_7",
+    "rolling_min_7",
+    "temperature_lag1",
+    "precipitation_lag1",
+    "wind_lag1"
+  ],
+  "importance": {
+    "methods": [
+      "permutation",
+      "ablation"
+    ],
+    "features_tested": 21,
+    "ablation_features": 7,
+    "time_comparison": "early vs late validation"
+  }
+}
