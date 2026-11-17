@@ -14,3 +14,8 @@ data/*.sqlite3
 docs/pdf_new/
 *.sqlite3-shm
 *.sqlite3-wal
+
+*.docx
+*.pptx
+*.pdf
+docs/build_materials.py
